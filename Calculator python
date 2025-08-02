@@ -1,0 +1,44 @@
+
+```python
+# --- Simple Calculator Program ---
+
+# 1. Get user input for two numbers and the operation.
+# We use a try-except block to handle cases where the user enters non-numeric input.
+try:
+    # Use float() to allow for decimal numbers as well as whole numbers.
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+
+    # Get the mathematical operation as a string.
+    operation = input("Enter the mathematical operation (+, -, *, /): ")
+
+except ValueError:
+    print("Invalid input. Please make sure to enter numbers for the first two prompts.")
+    # Exit the program if the input is not a valid number.
+    exit()
+
+# 2. Perform the calculation based on the user's chosen operation.
+# We use an if-elif-else block to check which operation to perform.
+if operation == '+':
+    result = num1 + num2
+    print(f"{num1} + {num2} = {result}")
+
+elif operation == '-':
+    result = num1 - num2
+    print(f"{num1} - {num2} = {result}")
+
+elif operation == '*':
+    result = num1 * num2
+    print(f"{num1} * {num2} = {result}")
+
+elif operation == '/':
+    # Check for division by zero to prevent a runtime error.
+    if num2 == 0:
+        print("Error: Cannot divide by zero.")
+    else:
+        result = num1 / num2
+        print(f"{num1} / {num2} = {result}")
+
+else:
+    # This block runs if the user enters an operation that isn't one of the valid choices.
+    print("Invalid operation. Please enter one of the following: +, -, *,\)
